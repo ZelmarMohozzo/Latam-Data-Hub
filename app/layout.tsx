@@ -1,0 +1,25 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
+
+export const metadata: Metadata = {
+  title: "APPSU - Análisis de Datos y Finanzas con Power BI",
+  description:
+    "Soluciones avanzadas de análisis de datos con Power BI para empresas que buscan optimizar su toma de decisiones.",
+    generator: 'v0.dev'
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="es" className="scroll-smooth">
+      <body className={inter.className}>{children}</body>
+    </html>
+  )
+}
