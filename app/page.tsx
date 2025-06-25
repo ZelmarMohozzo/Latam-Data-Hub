@@ -1,10 +1,16 @@
+"use client"
+
+import { useState } from "react"
 import NextImage from "next/image"
 import Link from "next/link"
-import { ChevronRight, BarChart3, PieChart, LineChart, Mail, Phone, MapPin } from "lucide-react"
+import { ChevronRight, BarChart3, PieChart, LineChart, Mail, Phone, MapPin, Menu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { MobileMenu } from "@/components/mobile-menu"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   return (
     <div className="flex min-h-screen flex-col bg-background">
       {/* Navigation */}
@@ -29,42 +35,31 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <button className="hidden md:flex btn-primary-custom">Solicitar Demo</button>
-            <Button variant="outline" size="icon" className="md:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-5 w-5"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
+            <Button variant="outline" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(true)}>
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Abrir menú</span>
             </Button>
           </div>
         </div>
       </header>
 
+      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-purple-blue-gradient pb-16 pt-24 md:pb-24 md:pt-32 lg:pb-32 lg:pt-40">
+        <section className="relative overflow-hidden bg-gradient-light dark:bg-gradient-dark pb-16 pt-24 md:pb-24 md:pt-32 lg:pb-32 lg:pt-40">
           <div className="absolute inset-0 bg-mesh-overlay opacity-20"></div>
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="absolute inset-0 bg-black"></div>
           <div className="container relative">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none glow-text">
-                    Transformamos datos en <span className="text-white">decisiones</span>
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none glow-text-light dark:glow-text-dark">
+                    Transformamos datos en <span className="text-primary">decisiones</span>
                   </h1>
-                  <p className="max-w-[600px] text-white/80 md:text-xl">
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     APPSU ofrece soluciones avanzadas de análisis de datos con Power BI para empresas que buscan
                     optimizar su toma de decisiones.
                   </p>
@@ -100,7 +95,7 @@ export default function Home() {
 
         {/* Dashboard Preview Section */}
         <section id="dashboards" className="relative overflow-hidden bg-background py-16 md:py-24">
-          <div className="absolute inset-0 bg-purple-blue-radial opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-muted/50 to-muted/30 opacity-50"></div>
           <div className="container relative">
             <div className="flex flex-col items-center justify-center text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nuestros Dashboards</h2>
@@ -111,25 +106,56 @@ export default function Home() {
 
             {/* Dashboard Preview */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              {/* Dashboard de Análisis de Depresión */}
               <div className="group relative overflow-hidden rounded-xl border border-white/20 bg-background/30 backdrop-blur-md shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-light/10 to-blue-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <NextImage
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2021.46.36_32260467.jpg-S37a2QUUclf4qmFuFKajZ5Lwbg6K6a.jpeg"
-                  alt="Dashboard de análisis"
-                  width={1200}
-                  height={675}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <div className="aspect-video overflow-hidden">
+                  <NextImage
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2021.46.36_32260467.jpg-S37a2QUUclf4qmFuFKajZ5Lwbg6K6a.jpeg"
+                    alt="Dashboard de análisis de depresión"
+                    width={1200}
+                    height={675}
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 bg-background/40 backdrop-blur-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="px-3 py-1 rounded-full text-xs font-medium bg-orange-500/20 text-orange-300 border border-orange-500/30">
+                      Análisis Psicológico
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Análisis de Depresión por Nivel Educativo</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Dashboard interactivo que analiza la correlación entre el nivel educativo y los índices de
+                    depresión, proporcionando insights valiosos para estrategias de intervención en salud mental.
+                  </p>
+                </div>
               </div>
+
+              {/* Dashboard de Análisis de Burnout */}
               <div className="group relative overflow-hidden rounded-xl border border-white/20 bg-background/30 backdrop-blur-md shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-light/10 to-blue-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <NextImage
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2022.15.08_aa881fe9.jpg-6skZnOs4HCNKitw7t6377Pds3vzmnp.jpeg"
-                  alt="Dashboard de análisis"
-                  width={1200}
-                  height={675}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                <div className="aspect-video overflow-hidden">
+                  <NextImage
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2022.58.36_a45ad130.jpg-c2la7J271JPqweCwU6bPQjIXV2o11O.jpeg"
+                    alt="Dashboard de análisis de burnout"
+                    width={1200}
+                    height={675}
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 bg-background/40 backdrop-blur-sm">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="px-3 py-1 rounded-full text-xs font-medium bg-red-500/20 text-red-300 border border-red-500/30">
+                      Síndrome de Burnout
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">Análisis de Burnout en Personal Médico</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Evaluación integral del síndrome de burnout y fatiga mental en profesionales de la salud, incluyendo
+                    análisis por especialidad médica y balance vida-trabajo.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -186,21 +212,24 @@ export default function Home() {
         </section>
 
         {/* PYME Section */}
-        <section id="pyme" className="relative overflow-hidden bg-purple-blue-gradient-diagonal py-16 md:py-24">
+        <section
+          id="pyme"
+          className="relative overflow-hidden bg-gradient-diagonal-light dark:bg-gradient-diagonal-dark py-16 md:py-24"
+        >
           <div className="absolute inset-0 bg-mesh-overlay opacity-20"></div>
           <div className="container relative">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
               <div className="flex flex-col justify-center space-y-6">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-foreground">
                     Soluciones para PYMES
                   </h2>
-                  <p className="max-w-[600px] text-white/80 md:text-xl">
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
                     Ofrecemos soluciones de análisis de datos accesibles y escalables diseñadas específicamente para
                     pequeñas y medianas empresas.
                   </p>
                 </div>
-                <ul className="space-y-4 text-white">
+                <ul className="space-y-4 text-foreground">
                   <li className="flex items-start gap-2">
                     <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
                       <svg

@@ -41,6 +41,39 @@ const dashboards = [
       "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2021.46.10_102c86da.jpg-PilmBwkfmtMIEbc5YS2Niz786m81Aq.jpeg",
     category: "comparacion",
   },
+  {
+    id: 5,
+    title: "Análisis de Síndrome de Burnout en Personal Médico",
+    description:
+      "Dashboard principal que analiza niveles de burnout, fatiga mental y balance vida-trabajo por especialidad médica",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2022.58.36_a45ad130.jpg-c2la7J271JPqweCwU6bPQjIXV2o11O.jpeg",
+    category: "burnout",
+  },
+  {
+    id: 6,
+    title: "Análisis Detallado de Burnout por Especialidad",
+    description:
+      "Métricas específicas de burn rate y fatiga mental con valores de referencia y análisis por especialidad médica",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2022.58.36_c1ac0ca4.jpg-0plYHTWqlZDcUMIzO9TwBgpEnyhvxn.jpeg",
+    category: "burnout",
+  },
+  {
+    id: 7,
+    title: "Perfil Demográfico y Hábitos del Personal Médico",
+    description: "Análisis de empleados por especialidad, hábitos de fumar, horas de sueño y distribución temporal",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Imagen%20de%20WhatsApp%202025-06-09%20a%20las%2022.58.35_0b91447f.jpg-O1fv7uBsioN1KNqgok5xLKo5x6frB9.jpeg",
+    category: "burnout",
+  },
+  {
+    id: 8, // Nuevo ID
+    title: "Tu Dashboard de Power BI",
+    description: "Descripción de tu dashboard personalizado",
+    image: "URL_DE_TU_IMAGEN_PREVIEW", // Opcional: captura de pantalla
+    category: "tu-categoria",
+  },
 ]
 
 export function DashboardShowcase() {
@@ -66,7 +99,7 @@ export function DashboardShowcase() {
 
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {dashboards.map((dashboard, index) => (
           <div
             key={dashboard.id}
@@ -92,6 +125,30 @@ export function DashboardShowcase() {
             <div className="absolute top-4 right-4 z-30">
               <div className="bg-purple-light/30 backdrop-blur-md rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white">
                 <ZoomIn className="h-5 w-5" />
+              </div>
+            </div>
+            {/* Badge de categoría */}
+            <div className="absolute top-4 left-4 z-30">
+              <div
+                className={cn(
+                  "px-3 py-1 rounded-full text-xs font-medium backdrop-blur-md",
+                  dashboard.category === "burnout"
+                    ? "bg-red-500/80 text-white"
+                    : dashboard.category === "depresion"
+                      ? "bg-orange-500/80 text-white"
+                      : dashboard.category === "patrones-sueño"
+                        ? "bg-blue-500/80 text-white"
+                        : dashboard.category === "habitos-dieteticos"
+                          ? "bg-green-500/80 text-white"
+                          : "bg-purple-500/80 text-white",
+                )}
+              >
+                {dashboard.category === "burnout" && "Burnout"}
+                {dashboard.category === "depresion" && "Depresión"}
+                {dashboard.category === "patrones-sueño" && "Sueño"}
+                {dashboard.category === "habitos-dieteticos" && "Hábitos"}
+                {dashboard.category === "comparacion" && "Comparativo"}
+                {dashboard.category === "tu-categoria" && "Tu Categoria"}
               </div>
             </div>
           </div>
@@ -124,6 +181,29 @@ export function DashboardShowcase() {
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div
+                      className={cn(
+                        "px-3 py-1 rounded-full text-xs font-medium",
+                        selectedDashboard.category === "burnout"
+                          ? "bg-red-500 text-white"
+                          : selectedDashboard.category === "depresion"
+                            ? "bg-orange-500 text-white"
+                            : selectedDashboard.category === "patrones-sueño"
+                              ? "bg-blue-500 text-white"
+                              : selectedDashboard.category === "habitos-dieteticos"
+                                ? "bg-green-500 text-white"
+                                : "bg-purple-500 text-white",
+                      )}
+                    >
+                      {selectedDashboard.category === "burnout" && "Análisis de Burnout"}
+                      {selectedDashboard.category === "depresion" && "Análisis de Depresión"}
+                      {selectedDashboard.category === "patrones-sueño" && "Patrones de Sueño"}
+                      {selectedDashboard.category === "habitos-dieteticos" && "Hábitos Dietéticos"}
+                      {selectedDashboard.category === "comparacion" && "Análisis Comparativo"}
+                      {selectedDashboard.category === "tu-categoria" && "Tu Categoria"}
+                    </div>
+                  </div>
                   <h2 className="text-2xl font-bold text-white">{selectedDashboard.title}</h2>
                   <p className="text-white/80 mt-2">{selectedDashboard.description}</p>
                 </div>
