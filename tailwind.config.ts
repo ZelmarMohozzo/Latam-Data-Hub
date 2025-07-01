@@ -53,7 +53,7 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Colores personalizados para el degradado
+        // Colores personalizados para el degradado (mantengo los originales por si se usan en otros componentes)
         purple: {
           light: "#8B5CF6", // Morado claro
           DEFAULT: "#7C3AED", // Morado principal
@@ -86,8 +86,9 @@ const config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "purple-blue-gradient": "linear-gradient(to right, #7C3AED, #3B82F6)",
-        "purple-blue-gradient-diagonal": "linear-gradient(135deg, #7C3AED, #3B82F6)",
+        // Gradientes en blanco y negro para el hero
+        "hero-gradient-light": "linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 85%))", // Blanco a gris claro
+        "hero-gradient-dark": "linear-gradient(146deg, hsl(121deg 0% 0%), hsl(0deg 0% 13.78%))", // Negro a gris oscuro
       },
     },
   },

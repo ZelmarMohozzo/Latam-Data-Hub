@@ -25,17 +25,16 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         <Link href="/" className="text-2xl font-medium transition-colors hover:text-primary" onClick={onClose}>
           Inicio
         </Link>
+        <Link href="/#nosotros" className="text-2xl font-medium transition-colors hover:text-primary" onClick={onClose}>
+          Nosotros
+        </Link>
+        <Link href="/#equipo" className="text-2xl font-medium transition-colors hover:text-primary" onClick={onClose}>
+          Nuestro Equipo
+        </Link>
         <Link href="/#contacto" className="text-2xl font-medium transition-colors hover:text-primary" onClick={onClose}>
           Contacto
         </Link>
-        <Link href="/#pyme" className="text-2xl font-medium transition-colors hover:text-primary" onClick={onClose}>
-          PYME
-        </Link>
-        <Link
-          href="/dashboards"
-          className="text-2xl font-medium transition-colors hover:text-primary"
-          onClick={onClose}
-        >
+        <Link href="/analysis" className="text-2xl font-medium transition-colors hover:text-primary" onClick={onClose}>
           Dashboards
         </Link>
         <Button className="mt-4 btn-primary-custom">Solicitar Demo</Button>

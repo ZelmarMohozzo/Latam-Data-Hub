@@ -7,9 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "APPSU - Análisis de Datos y Finanzas con Power BI",
+  title: "DATA SAPE - Análisis Inteligente para tu Negocio",
   description:
-    "Soluciones avanzadas de análisis de datos con Power BI para empresas que buscan optimizar su toma de decisiones.",
+    "Visualizá tus ingresos, egresos y resultados en tiempo real con dashboards modernos y personalizados. Ideal para negocios uruguayos.",
     generator: 'v0.dev'
 }
 
