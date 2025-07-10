@@ -15,11 +15,22 @@ import {
   TrendingUp,
   DollarSign,
   Eye,
+  ChevronDown,
+  ShoppingCart,
+  Building2,
+  Truck,
+  Monitor,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { MobileMenu } from "@/components/mobile-menu"
 import { ThemeToggle } from "@/components/theme-toggle"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -30,12 +41,36 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <BarChart3 className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold tracking-tight">DATA SAPE</span>
+            <span className="text-xl font-bold tracking-tight">WIDE SCOPE ANALYTICS</span>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <Link href="/" className="font-medium transition-colors hover:text-primary">
               Inicio
             </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 font-medium transition-colors hover:text-primary">
+                Nuestros Servicios
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <ShoppingCart className="h-4 w-4 text-green-500" />
+                  <span>Optimización Comercial</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <Building2 className="h-4 w-4 text-blue-500" />
+                  <span>Retail Estratégico</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <Truck className="h-4 w-4 text-orange-500" />
+                  <span>Pack Distribuidoras</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="flex items-center gap-2">
+                  <Monitor className="h-4 w-4 text-purple-500" />
+                  <span>Panel de Control</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link href="#nosotros" className="font-medium transition-colors hover:text-primary">
               Nosotros
             </Link>
@@ -78,8 +113,7 @@ export default function Home() {
                     Análisis Inteligente para tu <span className="text-primary">Negocio</span>
                   </h1>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                    Visualizá tus ingresos, egresos y resultados en tiempo real con dashboards modernos y
-                    personalizados.
+                    Transformamos datos en decisiones estratégicas con análisis avanzado y visualizaciones inteligentes para impulsar tu crecimiento empresarial.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 min-[400px]:flex-row">
@@ -114,27 +148,27 @@ export default function Home() {
         <section id="nosotros" className="py-16 md:py-24 bg-background">
           <div className="container">
             <div className="flex flex-col items-center justify-center text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">¿Por qué DATA SAPE?</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">¿Por qué WIDE SCOPE ANALYTICS?</h2>
               <p className="mt-4 max-w-[800px] text-muted-foreground md:text-xl">
-                Entendemos las necesidades de los negocios uruguayos
+                Soluciones de análisis de datos diseñadas para impulsar el crecimiento de tu negocio
               </p>
             </div>
 
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-bold">Simplificamos tu gestión financiera</h3>
+                  <h3 className="text-2xl font-bold">Transformamos datos en decisiones estratégicas</h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    En muchos negocios uruguayos, los números se manejan con planillas o a mano, lo que complica tener
-                    una visión clara del rendimiento.
+                    Nuestras soluciones de análisis avanzado te permiten identificar patrones, tendencias y oportunidades
+                    ocultas en tus datos empresariales.
                   </p>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Nuestro servicio te ofrece paneles visuales y fáciles de usar para que puedas ver tus ingresos,
-                    gastos, ganancias y evolución financiera en un solo lugar, en tiempo real.
+                    Con dashboards interactivos y reportes automatizados, obtienes insights accionables que impulsan
+                    la eficiencia operativa y el crecimiento sostenible.
                   </p>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    Ideal para emprendedores, pymes y comercios que quieren profesionalizar su gestión sin enredarse con
-                    sistemas complejos.
+                    Desde optimización comercial hasta análisis predictivo, nuestras herramientas se adaptan a las
+                    necesidades específicas de tu industria.
                   </p>
                 </div>
 
@@ -207,35 +241,44 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nuestros Servicios</h2>
               <p className="mt-4 max-w-[600px] text-muted-foreground md:text-xl">
-                Soluciones adaptadas a la realidad de tu negocio
+                Soluciones especializadas para cada tipo de negocio
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               <div className="group rounded-lg border border-white/10 bg-background/40 backdrop-blur-sm p-6 shadow-lg transition-all hover:shadow-xl">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 text-blue-500">
-                  <BarChart3 className="h-6 w-6" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/20 text-green-500">
+                  <ShoppingCart className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold">Dashboards Financieros</h3>
+                <h3 className="text-xl font-bold">Optimización Comercial</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Visualizá tus ingresos, gastos y ganancias en paneles fáciles de entender.
+                  Para comercios de cercanía que buscan crecer de forma ordenada y anticiparse a pérdidas.
                 </p>
               </div>
               <div className="group rounded-lg border border-white/10 bg-background/40 backdrop-blur-sm p-6 shadow-lg transition-all hover:shadow-xl">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-500/20 text-green-500">
-                  <PieChart className="h-6 w-6" />
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 text-blue-500">
+                  <Building2 className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold">Análisis de Rendimiento</h3>
+                <h3 className="text-xl font-bold">Retail Estratégico</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Identificá qué productos o servicios te generan más rentabilidad.
+                  Para supermercados y cadenas que necesitan eficiencia, previsión y decisiones rentables.
+                </p>
+              </div>
+              <div className="group rounded-lg border border-white/10 bg-background/40 backdrop-blur-sm p-6 shadow-lg transition-all hover:shadow-xl">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-500/20 text-orange-500">
+                  <Truck className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">Pack Distribuidoras</h3>
+                <p className="mt-2 text-muted-foreground">
+                  Estrategia, logística y rentabilidad en un solo sistema inteligente.
                 </p>
               </div>
               <div className="group rounded-lg border border-white/10 bg-background/40 backdrop-blur-sm p-6 shadow-lg transition-all hover:shadow-xl">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/20 text-purple-500">
-                  <LineChart className="h-6 w-6" />
+                  <Monitor className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold">Reportes Automáticos</h3>
+                <h3 className="text-xl font-bold">Panel de Control</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Recibí reportes semanales y mensuales sin tener que hacer nada.
+                  Dashboards personalizados con métricas clave para la toma de decisiones estratégicas.
                 </p>
               </div>
             </div>
@@ -454,10 +497,10 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
           <div className="flex items-center gap-2">
             <BarChart3 className="h-5 w-5 text-primary" />
-            <span className="text-lg font-bold">DATA SAPE</span>
+            <span className="text-lg font-bold">WIDE SCOPE ANALYTICS</span>
           </div>
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-            © 2025 DATA SAPE. Todos los derechos reservados.
+            © 2025 WIDE SCOPE ANALYTICS. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-muted-foreground hover:text-foreground">
