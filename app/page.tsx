@@ -285,6 +285,167 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Interactive Dashboards Section */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container">
+            <div className="flex flex-col items-center justify-center text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Dashboards de Análisis <span className="text-primary">Profundo</span>
+              </h2>
+              <p className="mt-4 max-w-[800px] text-muted-foreground md:text-xl">
+                Visualizaciones interactivas y análisis en tiempo real para una comprensión completa de tu negocio
+              </p>
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center mb-16">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold">Análisis Financiero Avanzado</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Dashboards interactivos que te permiten explorar tus datos financieros desde múltiples perspectivas.
+                    Identifica tendencias, patrones estacionales y oportunidades de crecimiento.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 rounded-lg bg-gradient-to-br from-blue-500/10 to-blue-600/10 border border-blue-500/20">
+                    <BarChart3 className="h-8 w-8 text-blue-500 mb-2" />
+                    <h4 className="font-semibold text-blue-400">Ventas por Período</h4>
+                    <p className="text-sm text-muted-foreground">Análisis temporal detallado</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-gradient-to-br from-green-500/10 to-green-600/10 border border-green-500/20">
+                    <PieChart className="h-8 w-8 text-green-500 mb-2" />
+                    <h4 className="font-semibold text-green-400">Distribución de Ingresos</h4>
+                    <p className="text-sm text-muted-foreground">Por categorías y productos</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-gradient-to-br from-purple-500/10 to-purple-600/10 border border-purple-500/20">
+                    <LineChart className="h-8 w-8 text-purple-500 mb-2" />
+                    <h4 className="font-semibold text-purple-400">Tendencias Predictivas</h4>
+                    <p className="text-sm text-muted-foreground">Proyecciones futuras</p>
+                  </div>
+                  <div className="p-4 rounded-lg bg-gradient-to-br from-orange-500/10 to-orange-600/10 border border-orange-500/20">
+                    <TrendingUp className="h-8 w-8 text-orange-500 mb-2" />
+                    <h4 className="font-semibold text-orange-400">KPIs Dinámicos</h4>
+                    <p className="text-sm text-muted-foreground">Métricas en tiempo real</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl blur-xl"></div>
+                <div className="relative bg-background/60 backdrop-blur-sm rounded-xl border p-6 shadow-xl">
+                  <div className="aspect-video bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg border border-white/10 flex items-center justify-center">
+                    <div className="text-center">
+                      <BarChart3 className="h-16 w-16 mx-auto mb-4 text-primary" />
+                      <h4 className="text-xl font-bold mb-2">Dashboard Interactivo</h4>
+                      <p className="text-muted-foreground mb-4">Explora datos en tiempo real</p>
+                      <Link href="/analysis">
+                        <button className="btn-primary-custom">
+                          Ver Demo en Vivo
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Dashboard Features Grid */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="group p-6 rounded-xl border border-white/10 bg-gradient-to-br from-blue-500/5 to-blue-600/5 hover:from-blue-500/10 hover:to-blue-600/10 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-blue-500/20">
+                    <BarChart3 className="h-6 w-6 text-blue-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Análisis de Ventas</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Visualiza el rendimiento de ventas por día, mes, categoría y producto con gráficos interactivos.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <span>Evolución temporal de ventas</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <span>Comparativas por período</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    <span>Filtros dinámicos avanzados</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="group p-6 rounded-xl border border-white/10 bg-gradient-to-br from-green-500/5 to-green-600/5 hover:from-green-500/10 hover:to-green-600/10 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-green-500/20">
+                    <PieChart className="h-6 w-6 text-green-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Segmentación Inteligente</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Analiza tu base de clientes y productos con segmentaciones automáticas y personalizadas.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                    <span>Clientes por valor y frecuencia</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                    <span>Productos más rentables</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                    <span>Análisis de comportamiento</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="group p-6 rounded-xl border border-white/10 bg-gradient-to-br from-purple-500/5 to-purple-600/5 hover:from-purple-500/10 hover:to-purple-600/10 transition-all duration-300">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-purple-500/20">
+                    <LineChart className="h-6 w-6 text-purple-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold">Predicciones Avanzadas</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Utiliza machine learning para predecir tendencias futuras y optimizar tu estrategia.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    <span>Forecasting de ventas</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    <span>Detección de anomalías</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                    <span>Recomendaciones automáticas</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="mt-16 text-center">
+              <div className="inline-flex flex-col sm:flex-row gap-4">
+                <Link href="/analysis">
+                  <button className="btn-gradient-custom btn-pulse flex items-center justify-center gap-2">
+                    Explorar Dashboard Demo
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </Link>
+                <button className="btn-secondary-custom">
+                  Solicitar Demo Personalizada
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Team Section */}
         <section id="equipo" className="py-16 md:py-24 bg-background">
           <div className="container">
