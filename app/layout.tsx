@@ -7,9 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "WIDE SCOPE ANALYTICS - Análisis Inteligente para tu Negocio",
+  title: "DATA SAPE - Análisis Inteligente para tu Negocio",
   description:
-    "Transformamos datos en decisiones estratégicas con análisis avanzado y visualizaciones inteligentes para impulsar tu crecimiento empresarial.",
+    "Visualizá tus ingresos, egresos y resultados en tiempo real con dashboards modernos y personalizados. Ideal para negocios uruguayos.",
     generator: 'v0.dev'
 }
 
