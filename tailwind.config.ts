@@ -53,16 +53,32 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Colores personalizados para el degradado (mantengo los originales por si se usan en otros componentes)
-        purple: {
-          light: "#8B5CF6", // Morado claro
-          DEFAULT: "#7C3AED", // Morado principal
-          dark: "#6D28D9", // Morado oscuro
-        },
-        blue: {
-          light: "#60A5FA", // Azul claro
-          DEFAULT: "#3B82F6", // Azul principal
-          dark: "#2563EB", // Azul oscuro
+        // Nueva paleta de colores azul y verde
+        brand: {
+          blue: {
+            50: "#eff6ff",
+            100: "#dbeafe",
+            200: "#bfdbfe",
+            300: "#93c5fd",
+            400: "#60a5fa",
+            500: "#3b82f6",
+            600: "#2563eb",
+            700: "#1d4ed8",
+            800: "#1e40af",
+            900: "#1e3a8a",
+          },
+          green: {
+            50: "#f0fdf4",
+            100: "#dcfce7",
+            200: "#bbf7d0",
+            300: "#86efac",
+            400: "#4ade80",
+            500: "#22c55e",
+            600: "#16a34a",
+            700: "#15803d",
+            800: "#166534",
+            900: "#14532d",
+          },
         },
       },
       borderRadius: {
@@ -79,16 +95,29 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "slide-in": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.6s ease-out",
+        "slide-in": "slide-in 0.5s ease-out",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        // Gradientes en blanco y negro para el hero
-        "hero-gradient-light": "linear-gradient(135deg, hsl(0 0% 98%), hsl(0 0% 85%))", // Blanco a gris claro
-        "hero-gradient-dark": "linear-gradient(146deg, hsl(121deg 0% 0%), hsl(0deg 0% 13.78%))", // Negro a gris oscuro
+        "hero-gradient": "linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%)",
+        "section-gradient": "linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%)",
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
     },
   },
