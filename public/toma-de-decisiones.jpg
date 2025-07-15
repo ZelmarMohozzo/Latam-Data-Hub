@@ -1,4 +1,5 @@
-"use client"
+```typescriptreact file="app/page.tsx"
+[v0-no-op-code-block-prefix]"use client"
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
@@ -8,27 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { MobileMenu } from "@/components/mobile-menu"
-import { ContactForm } from "@/components/contact-form"
-import {
-  BarChart3,
-  TrendingUp,
-  Users,
-  DollarSign,
-  Menu,
-  ChevronRight,
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-  CheckCircle,
-  Star,
-  Database,
-  Brain,
-  Code,
-  Zap,
-  FileSpreadsheet,
-  Monitor,
-} from "lucide-react"
+import { BarChart3, TrendingUp, Users, DollarSign, Menu, ChevronRight, Mail, Phone, MapPin, ArrowRight, CheckCircle, Star, Database, Brain, Code, Zap, FileSpreadsheet, Monitor } from 'lucide-react'
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -131,29 +112,20 @@ export default function LandingPage() {
               >
                 {/* Slide 1: Optimización Comercial */}
                 <div className="w-full flex-shrink-0">
-                  <div
-                    className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16 relative overflow-hidden rounded-3xl"
-                    style={{
-                      backgroundImage: `url("/Diseno-sin-titulo-64.jpg")`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    {/* Overlay for readability */}
-                    <div className="absolute inset-0 bg-black opacity-20 rounded-3xl"></div>
-                    <div className="relative z-10 space-y-8 text-white">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16">
+                    <div className="space-y-8">
                       <div className="space-y-4">
                         <Badge className="bg-gradient-to-r from-brand-blue-500 to-brand-green-500 text-white px-4 py-2">
                           🏪 Optimización Comercial
                         </Badge>
-                        <h1 className="text-4xl lg:text-5xl font-heading font-bold leading-tight">
+                        <h1 className="text-4xl lg:text-5xl font-heading font-bold text-slate-800 leading-tight">
                           Impulsá tu{" "}
-                          <span className="bg-gradient-to-r from-brand-blue-300 to-brand-green-300 bg-clip-text text-transparent">
+                          <span className="bg-gradient-to-r from-brand-blue-600 to-brand-green-600 bg-clip-text text-transparent">
                             almacén
                           </span>{" "}
                           con decisiones basadas en datos
                         </h1>
-                        <p className="text-xl leading-relaxed">
+                        <p className="text-xl text-slate-600 leading-relaxed">
                           Diseñado para comercios de cercanía que quieren crecer de forma ordenada, anticiparse a
                           pérdidas y aprovechar oportunidades.
                         </p>
@@ -163,15 +135,18 @@ export default function LandingPage() {
                           Explorar Servicios
                           <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </button>
-                        <button onClick={() => scrollToSection("contacto")} className="btn-outline-modern-light">
+                        <button onClick={() => scrollToSection("contacto")} className="btn-outline-modern">
                           Contactar Ahora
                         </button>
                       </div>
                     </div>
-                    <div className="relative z-10">
+                    <div className="relative">
                       <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                        {/* The image itself is now the background, so this div can be empty or contain other elements */}
-                        <div className="w-full h-80 object-cover"></div>
+                        <img
+                          src="/toma-de-decisiones.jpg"
+                          alt="Personas analizando gráficos de datos para la toma de decisiones"
+                          className="w-full h-80 object-cover"
+                        />
                       </div>
                     </div>
                   </div>
@@ -179,14 +154,7 @@ export default function LandingPage() {
 
                 {/* Slide 2: Qué Ofrecemos */}
                 <div className="w-full flex-shrink-0">
-                  <div
-                    className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16"
-                    style={{
-                      backgroundImage: 'url("/toma-de-decisiones.jpg")',
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
+                  <div className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16">
                     <div className="space-y-8">
                       <div className="space-y-4">
                         <Badge className="bg-gradient-to-r from-brand-green-500 to-brand-blue-500 text-white px-4 py-2">
@@ -227,7 +195,7 @@ export default function LandingPage() {
                     </div>
                     <div className="relative">
                       <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                        <div className="bg-transparent p-8 h-80 flex items-center justify-center">
+                        <div className="bg-gradient-to-br from-brand-green-100 to-brand-blue-100 p-8 h-80 flex items-center justify-center">
                           <TrendingUp className="h-32 w-32 text-brand-green-600" />
                         </div>
                       </div>
@@ -237,52 +205,43 @@ export default function LandingPage() {
 
                 {/* Slide 3: Pack Distribuidoras */}
                 <div className="w-full flex-shrink-0">
-                  <div
-                    className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16 relative overflow-hidden rounded-3xl"
-                    style={{
-                      backgroundImage: `url(${"/logistica-optimizada.png"})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    {/* Overlay for readability */}
-                    <div className="absolute inset-0 bg-black opacity-40 rounded-3xl"></div>
-                    <div className="relative z-10 space-y-8 text-white">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center p-8 lg:p-16">
+                    <div className="space-y-8">
                       <div className="space-y-4">
                         <Badge className="bg-gradient-to-r from-purple-500 to-brand-blue-500 text-white px-4 py-2">
                           🚚 Pack Distribuidoras Eficientes
                         </Badge>
-                        <h1 className="text-4xl lg:text-5xl font-heading font-bold leading-tight">
+                        <h1 className="text-4xl lg:text-5xl font-heading font-bold text-slate-800 leading-tight">
                           Estrategia, logística y{" "}
-                          <span className="bg-gradient-to-r from-purple-300 to-brand-blue-300 bg-clip-text text-transparent">
+                          <span className="bg-gradient-to-r from-purple-600 to-brand-blue-600 bg-clip-text text-transparent">
                             rentabilidad
                           </span>{" "}
                           en un solo sistema inteligente
                         </h1>
-                        <p className="text-xl leading-relaxed mb-6">
+                        <p className="text-xl text-slate-600 leading-relaxed mb-6">
                           Diseñado para distribuidoras que quieren operar con precisión y visión comercial a largo
                           plazo.
                         </p>
-                        <div className="space-y-3 text-lg">
+                        <div className="space-y-3 text-lg text-slate-600">
                           <div className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-purple-300 mt-1 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
                             <span>Rutas logísticas optimizadas según comportamiento histórico</span>
                           </div>
                           <div className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-purple-300 mt-1 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
                             <span>Inventarios actualizados por cliente, región o canal</span>
                           </div>
                           <div className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-purple-300 mt-1 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
                             <span>Análisis de reposición, rotación y puntos críticos de pérdida</span>
                           </div>
                           <div className="flex items-start space-x-3">
-                            <CheckCircle className="h-5 w-5 text-purple-300 mt-1 flex-shrink-0" />
+                            <CheckCircle className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
                             <span>Segmentación inteligente para campañas y condiciones personalizadas</span>
                           </div>
                         </div>
-                        <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-6 mt-6 text-slate-800">
-                          <p className="leading-relaxed">
+                        <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-6 mt-6">
+                          <p className="text-slate-700 leading-relaxed">
                             💡 <strong>Gracias al análisis predictivo</strong>, te ayudamos a anticipar la demanda,
                             detectar fugas en la operación y convertirlas en oportunidades de ganancia.
                           </p>
@@ -295,9 +254,11 @@ export default function LandingPage() {
                         </button>
                       </div>
                     </div>
-                    <div className="relative z-10">
+                    <div className="relative">
                       <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                        <div className="w-full h-80 object-cover"></div>
+                        <div className="bg-gradient-to-br from-purple-100 to-brand-blue-100 p-8 h-80 flex items-center justify-center">
+                          <Database className="h-32 w-32 text-purple-600" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -743,7 +704,54 @@ export default function LandingPage() {
 
             <div className="section-card">
               <h3 className="text-2xl font-heading font-bold text-slate-800 mb-6">Solicita una Consulta Gratuita</h3>
-              <ContactForm />
+              <form className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Nombre</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue-500 focus:ring-2 focus:ring-brand-blue-500/20 transition-colors"
+                      placeholder="Tu nombre"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-2">Empresa</label>
+                    <input
+                      type="text"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue-500 focus:ring-2 focus:ring-brand-blue-500/20 transition-colors"
+                      placeholder="Nombre de tu empresa"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue-500 focus:ring-2 focus:ring-brand-blue-500/20 transition-colors"
+                    placeholder="tu@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Teléfono</label>
+                  <input
+                    type="tel"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue-500 focus:ring-2 focus:ring-brand-blue-500/20 transition-colors"
+                    placeholder="+598 99 123 456"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Mensaje</label>
+                  <textarea
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-brand-blue-500 focus:ring-2 focus:ring-brand-blue-500/20 transition-colors resize-none"
+                    placeholder="Cuéntanos sobre tu proyecto y necesidades..."
+                  ></textarea>
+                </div>
+                <Button className="btn-primary-modern w-full">
+                  Enviar Consulta
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </form>
             </div>
           </div>
         </div>

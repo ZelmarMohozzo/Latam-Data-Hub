@@ -1,27 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Poppins } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/toaster" // Import Toaster
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
-  display: "swap",
-})
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "WIDE SCOPE ANALYTICS - Análisis Inteligente para tu Negocio",
-  description:
-    "Visualizá tus ingresos, egresos y resultados en tiempo real con dashboards modernos y personalizados. Ideal para negocios uruguayos.",
-  generator: "v0.dev",
+  title: "WIDE SCOPE ANALYTICS",
+  description: "Transformamos datos en decisiones inteligentes para impulsar el crecimiento de tu negocio.",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -30,10 +19,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`scroll-smooth ${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
-      <body className={`${inter.className} antialiased`}>
+    <html lang="es" suppressHydrationWarning>
+      <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
+          <Toaster /> {/* Add Toaster component here */}
         </ThemeProvider>
       </body>
     </html>
